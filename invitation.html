@@ -1,14 +1,294 @@
-<section class="guestbook" id="guestbook">
-    <h3>Wishes ♡</h3>
-
-    <a class="map"
-       href="https://ss0779268.sarahah.pro"
-       target="_blank"
-       rel="noopener noreferrer">
-       Send Your Wishes ♡
-    </a>
-
-    <p class="guest-note">
-        Please don't forget to write your name ♡
-    </p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulrahman & Nadine Wedding</title>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:#f8f1e7;
+    color:#45352e;
+    font-family:Georgia,serif;
+    text-align:center;
+}
+.hero{
+    background:linear-gradient(145deg,#302020,#684b3e);
+    color:#f8edda;
+    padding:55px 15px 45px;
+}
+.hero h1{
+    color:#dfbd79;
+    font-size:clamp(38px,8vw,60px);
+    font-style:italic;
+    font-weight:normal;
+    margin:12px 0;
+}
+.hero .amp{font-size:27px}
+.kicker{
+    color:#e5c98e;
+    letter-spacing:4px;
+    font-size:11px;
+    text-transform:uppercase;
+}
+.container{
+    max-width:650px;
+    margin:auto;
+    padding:20px 15px 45px;
+}
+.card{
+    background:#fffdf8;
+    border:1px solid #e3d2b4;
+    padding:30px 18px;
+    margin:22px 0;
+    box-shadow:0 8px 25px rgba(70,45,30,.06);
+}
+h2,h3{
+    color:#98734a;
+    font-weight:normal;
+    font-style:italic;
+}
+h2{font-size:30px}
+h3{font-size:27px;margin:0 0 15px}
+.photo{
+    display:block;
+    width:100%;
+    max-width:480px;
+    height:300px;
+    object-fit:cover;
+    margin:20px auto 0;
+    border:1px solid #d5bd91;
+}
+.date{
+    color:#b18b50;
+    font-size:27px;
+    margin:15px 0;
+}
+.time{
+    letter-spacing:3px;
+    font-size:14px;
+}
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+    max-width:480px;
+    margin:25px auto 10px;
+}
+.unit{
+    background:#f5eee3;
+    padding:14px 3px;
+    border:1px solid #eadcc2;
+}
+.unit strong{
+    display:block;
+    color:#98734a;
+    font-size:29px;
+}
+.unit span{
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.calendar{
+    width:100%;
+    max-width:400px;
+    margin:20px auto;
+    border-collapse:collapse;
+    font-family:Arial,sans-serif;
+}
+.calendar th,.calendar td{
+    padding:11px 4px;
+    border:1px solid #eee5d8;
+}
+.calendar th{color:#98734a}
+.marked{
+    background:#b9904c;
+    color:white;
+    border-radius:50%;
+    font-weight:bold;
+}
+.button{
+    display:inline-block;
+    background:#b9904c;
+    color:white;
+    text-decoration:none;
+    padding:15px 28px;
+    margin:15px 5px 5px;
+    letter-spacing:2px;
+    font-size:11px;
+    text-transform:uppercase;
+    transition:.2s;
+}
+.button:hover{background:#80613e}
+.note{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#806f60;
+    margin-top:17px;
+}
+footer{
+    color:#98734a;
+    letter-spacing:2px;
+    font-size:11px;
+    padding:25px 10px;
+}
+@media(max-width:400px){
+    .card{padding:25px 12px}
+    .unit strong{font-size:23px}
+    .calendar th,.calendar td{padding:9px 2px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+    <div class="kicker">The Wedding Celebration</div>
+    <h1>Abdulrahman</h1>
+    <div class="amp">&amp;</div>
+    <h1>Nadine</h1>
+    <div class="kicker">We can't wait to celebrate with you</div>
+</header>
+<main class="container">
+    <!-- Couple Photo -->
+    <section class="card">
+        <h2>Our Moment ♡</h2>
+        <img class="photo" src="couple-photo.jpg"
+             alt="Abdulrahman and Nadine">
+    </section>
+    <!-- Date and Countdown -->
+    <section class="card">
+        <h2>Save the Date</h2>
+        <div class="date">Sunday, 3 January 2027</div>
+        <div class="time">3:00 PM</div>
+        <div class="countdown">
+            <div class="unit">
+                <strong id="days">00</strong>
+                <span>Days</span>
+            </div>
+            <div class="unit">
+                <strong id="hours">00</strong>
+                <span>Hours</span>
+            </div>
+            <div class="unit">
+                <strong id="minutes">00</strong>
+                <span>Minutes</span>
+            </div>
+            <div class="unit">
+                <strong id="seconds">00</strong>
+                <span>Seconds</span>
+            </div>
+        </div>
+        <p class="note" id="countdown-note">
+            Counting down to our special day ♡
+        </p>
+    </section>
+    <!-- January Calendar -->
+    <section class="card">
+        <h2>January 2027</h2>
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th><th>Mon</th><th>Tue</th>
+                    <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td>1</td><td>2</td>
+                </tr>
+                <tr>
+                    <td class="marked">3 ♥</td>
+                    <td>4</td><td>5</td><td>6</td>
+                    <td>7</td><td>8</td><td>9</td>
+                </tr>
+                <tr>
+                    <td>10</td><td>11</td><td>12</td><td>13</td>
+                    <td>14</td><td>15</td><td>16</td>
+                </tr>
+                <tr>
+                    <td>17</td><td>18</td><td>19</td><td>20</td>
+                    <td>21</td><td>22</td><td>23</td>
+                </tr>
+                <tr>
+                    <td>24</td><td>25</td><td>26</td><td>27</td>
+                    <td>28</td><td>29</td><td>30</td>
+                </tr>
+                <tr>
+                    <td>31</td><td></td><td></td><td></td>
+                    <td></td><td></td><td></td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="button" href="wedding.ics" download>
+            Add to Calendar
+        </a>
+    </section>
+    <!-- Location -->
+    <section class="card">
+        <h2>Location</h2>
+        <p>
+            Gardenia Wedding Halls<br>
+            La Violla<br>
+            Almaza, Cairo
+        </p>
+        <a class="button"
+           href="https://goo.gl/maps/RuoaVfa7qMwzuK499"
+           target="_blank" rel="noopener">
+            View Location
+        </a>
+    </section>
+    <!-- Wishes - Sarahah -->
+    <section class="card" id="guestbook">
+        <h3>Wishes ♡</h3>
+        <a class="button"
+           href="https://ss0779268.sarahah.pro"
+           target="_blank"
+           rel="noopener noreferrer">
+            Send Your Wishes ♡
+        </a>
+        <p class="note">
+            Please don't forget to write your name ♡
+        </p>
+    </section>
+</main>
+<footer>
+    WITH LOVE · ABDULRAHMAN &amp; NADINE
+</footer>
+<script>
+(function(){
+    // Wedding date: 3 January 2027, 3 PM Cairo time
+    const weddingTime =
+        Date.parse("2027-01-03T15:00:00+02:00");
+    function updateCountdown(){
+        let remaining = weddingTime - Date.now();
+        if(remaining <= 0){
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            document.getElementById("countdown-note").textContent =
+                "Today is our special day! ♡";
+            return;
+        }
+        const days = Math.floor(remaining / 86400000);
+        const hours = Math.floor((remaining % 86400000) / 3600000);
+        const minutes = Math.floor((remaining % 3600000) / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        document.getElementById("days").textContent =
+            String(days).padStart(2,"0");
+        document.getElementById("hours").textContent =
+            String(hours).padStart(2,"0");
+        document.getElementById("minutes").textContent =
+            String(minutes).padStart(2,"0");
+        document.getElementById("seconds").textContent =
+            String(seconds).padStart(2,"0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown,1000);
+})();
+</script>
+</body>
+</html>
